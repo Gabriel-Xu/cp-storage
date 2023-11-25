@@ -1,4 +1,5 @@
-const int MAXN = 1e6;
+const ll mod=1e9+7;
+const int MAXN = 2e5;
 ll fac[MAXN + 1];
 ll inv[MAXN + 1];
 
@@ -12,15 +13,15 @@ ll exp(ll x, ll n, ll m) {
 	}
 	return res;
 }
-void factorial(ll p) {
+void factorial() {
 	fac[0] = 1;
-	for (int i = 1; i <= MAXN; i++) { fac[i] = fac[i - 1] * i % p; }
+	for (int i = 1; i <= MAXN; i++) { fac[i] = fac[i - 1] * i % mod; }
 }
-void inverses(ll p) {
-	inv[MAXN] = exp(fac[MAXN], p - 2, p);
-	for (int i = MAXN; i >= 1; i--) { inv[i - 1] = inv[i] * i % p; }
+void inverses() {
+	inv[MAXN] = exp(fac[MAXN], mod - 2, mod);
+	for (int i = MAXN; i >= 1; i--) { inv[i - 1] = inv[i] * i % mod; }
 }
-ll choose(ll n, ll r, ll p) {
-	return fac[n] * inv[r] % p * inv[n - r] % p;
+ll choose(ll n, ll r) {
+	return fac[n] * inv[r] % mod * inv[n - r] % mod;
 }
 // call factorial, then inverses at start
