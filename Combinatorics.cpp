@@ -3,6 +3,9 @@ const int MAXN = 2e5;
 ll fac[MAXN + 1];
 ll inv[MAXN + 1];
 
+ll inv(ll a) { // modular inverses
+  return a <= 1 ? a : mod - (mod/a) * inv(mod % a) % mod;
+}
 ll exp(ll x, ll n, ll m) {
 	x %= m;
 	ll res = 1;
