@@ -4,7 +4,7 @@ ll fac[MAXN + 1];
 ll inv[MAXN + 1];
 
 ll inv(ll a) { // modular inverses
-  return a <= 1 ? a : mod - (mod/a) * inv(mod % a) % mod;
+  	return a <= 1 ? a : mod - (mod/a) * inv(mod % a) % mod;
 }
 ll exp(ll x, ll n, ll m) {
 	x %= m;
