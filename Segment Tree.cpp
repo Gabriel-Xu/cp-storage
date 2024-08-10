@@ -17,7 +17,7 @@ template <class T> class SegmentTree {
 			segtree[ind >> 1] = comb(segtree[ind], segtree[ind ^ 1]);
 		}
 	}
-	T range_query(int start, int end) { // [start, end)
+	T query(int start, int end) { // [start, end)
 		assert(0 <= start && start < len && 0 < end && end <= len);
 		T sum = DEFAULT;
 		for (start += len, end += len; start < end; start /= 2, end /= 2) {
