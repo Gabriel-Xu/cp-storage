@@ -79,7 +79,7 @@ template<class T> struct LazySegmentTree {
         }
     }
     void build(vector<T>& a) {
-        assert(sz(a) == n);
+        assert(a.size() == n);
         buildUtil(0,0,n-1,a);
     }
     T query(int l, int r) {
