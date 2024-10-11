@@ -1,3 +1,5 @@
+typedef long long ll;
+
 const ll mod=1e9+7;
 const int MAXN = 2e5;
 ll fac[MAXN + 1];
